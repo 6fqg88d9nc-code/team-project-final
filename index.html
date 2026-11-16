@@ -3,46 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Менің сүйікті әндерім</title>
+    <title>Kazakh Music - Менің әндерім</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts арқылы әдемі қаріп қосамыз -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>🎵 Менің сүйікті әндерім</h1>
-        <p>Көңіл көтеретін музыкалар жинағы</p>
+
+    <!-- 1. Навигациялық мәзір (Басты бет, Әндер, Туралы) -->
+    <nav class="navbar">
+        <div class="logo">🎵 QazaqTunes</div>
+        <ul class="nav-links">
+            <li><a href="#home">Басты бет</a></li>
+            <li><a href="#playlist">Әндер</a></li>
+            <li><a href="#about">Туралы</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. Басты бет (Hero Section) -->
+    <header id="home" class="hero">
+        <h1>Сүйікті әндеріңізді тыңдаңыз</h1>
+        <p>Ең үздік қазақстандық әндер жинағы</p>
+        <a href="#playlist" class="btn-primary">Әндерге өту</a>
     </header>
 
-    <main class="playlist">
-        <!-- 1-ән -->
-        <div class="song-card">
-            <div class="song-info">
-                <h3>Көк тудың желбірегені</h3>
-                <p>Орындаушы: Халық әні</p>
+    <!-- 3. Әндер тізімі -->
+    <main id="playlist" class="playlist-container">
+        <h2>Танымал әндер</h2>
+        
+        <div class="songs-list">
+            <!-- 1-ән -->
+            <div class="song-card">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=150&auto=format&fit=crop" alt="Ән суреті" class="song-img">
+                <div class="song-info">
+                    <h3>Көк тудың желбірегені</h3>
+                    <p>Халық әні</p>
+                </div>
+                <!-- Нақты аудио файл сілтемесі -->
+                <button class="play-btn" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">▶</button>
             </div>
-            <button class="play-btn">Ойнату ▶</button>
-        </div>
 
-        <!-- 2-ән -->
-        <div class="song-card">
-            <div class="song-info">
-                <h3>Думан</h3>
-                <p>Орындаушы: Димаш Құдайберген</p>
+            <!-- 2-ән -->
+            <div class="song-card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=150&auto=format&fit=crop" alt="Ән суреті" class="song-img">
+                <div class="song-info">
+                    <h3>Думан</h3>
+                    <p>Димаш Құдайберген</p>
+                </div>
+                <button class="play-btn" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">▶</button>
             </div>
-            <button class="play-btn">Ойнату ▶</button>
-        </div>
 
-        <!-- 3-ән -->
-        <div class="song-card">
-            <div class="song-info">
-                <h3>Қара торғай</h3>
-                <p>Орындаушы: Қайрат Нұртас</p>
+            <!-- 3-ән -->
+            <div class="song-card">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=150&auto=format&fit=crop" alt="Ән суреті" class="song-img">
+                <div class="song-info">
+                    <h3>Қара торғай</h3>
+                    <p>Қайрат Нұртас</p>
+                </div>
+                <button class="play-btn" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">▶</button>
             </div>
-            <button class="play-btn">Ойнату ▶</button>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Зертханалық жұмыс. Барлық құқықтар қорғалған.</p>
+    <!-- Жасырын аудио плеер -->
+    <audio id="audio-player"></audio>
+
+    <!-- 4. Төменгі бөлім -->
+    <footer id="about">
+        <p>&copy; 2026 QazaqTunes. Барлық құқықтар қорғалған.</p>
     </footer>
 
     <script src="script.js"></script>
