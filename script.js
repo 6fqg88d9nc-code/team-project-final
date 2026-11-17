@@ -1,3 +1,4 @@
+
 // Аудио плеерді және батырмаларды табамыз
 const audioPlayer = document.getElementById('audio-player');
 const playButtons = document.querySelectorAll('.play-btn');
@@ -41,4 +42,8 @@ audioPlayer.addEventListener('ended', () => {
         btn.textContent = '▶';
         btn.classList.remove('playing');
     });
+
+document.getElementById('btn').addEventListener('click', function() {
+    alert('С тобой сила паука! 🕷️✨');
+
 });
