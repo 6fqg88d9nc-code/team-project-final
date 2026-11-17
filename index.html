@@ -1,77 +1,73 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kazakh Music - Менің әндерім</title>
+    <title>Галерея супергероев</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts арқылы әдемі қаріп қосамыз -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 1. Навигациялық мәзір (Басты бет, Әндер, Туралы) -->
-    <nav class="navbar">
-        <div class="logo">🎵 QazaqTunes</div>
-        <ul class="nav-links">
-            <li><a href="#home">Басты бет</a></li>
-            <li><a href="#playlist">Әндер</a></li>
-            <li><a href="#about">Туралы</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>Вселенная супергероев</h1>
+            <p>Выберите своего любимого персонажа</p>
+        </header>
 
-    <!-- 2. Басты бет (Hero Section) -->
-    <header id="home" class="hero">
-        <h1>Сүйікті әндеріңізді тыңдаңыз</h1>
-        <p>Ең үздік қазақстандық әндер жинағы</p>
-        <a href="#playlist" class="btn-primary">Әндерге өту</a>
-    </header>
-
-    <!-- 3. Әндер тізімі -->
-    <main id="playlist" class="playlist-container">
-        <h2>Танымал әндер</h2>
-        
-        <div class="songs-list">
-            <!-- 1-ән -->
-            <div class="song-card">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=150&auto=format&fit=crop" alt="Ән суреті" class="song-img">
-                <div class="song-info">
-                    <h3>Көк тудың желбірегені</h3>
-                    <p>Халық әні</p>
+        <div class="heroes-grid">
+            <!-- 1. Человек-паук -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1000&auto=format&fit=crop" alt="Человек-паук">
                 </div>
-                <!-- Нақты аудио файл сілтемесі -->
-                <button class="play-btn" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">▶</button>
+                <div class="content">
+                    <h2>Человек-паук</h2>
+                    <p class="subtitle">Питер Паркер • Marvel</p>
+                    <p class="description">Обладает невероятной ловкостью, паучьем чутьем и защищает Нью-Йорк.</p>
+                    <button class="hero-btn" data-hero="Человек-паук">Выбрать</button>
+                </div>
             </div>
 
-            <!-- 2-ән -->
-            <div class="song-card">
-                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=150&auto=format&fit=crop" alt="Ән суреті" class="song-img">
-                <div class="song-info">
-                    <h3>Думан</h3>
-                    <p>Димаш Құдайберген</p>
+            <!-- 2. Железный человек -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1000&auto=format&fit=crop" alt="Железный человек">
                 </div>
-                <button class="play-btn" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">▶</button>
+                <div class="content">
+                    <h2>Железный человек</h2>
+                    <p class="subtitle">Тони Старк • Marvel</p>
+                    <p class="description">Гениальный миллиардер в высокотехнологичном костюме брони.</p>
+                    <button class="hero-btn" data-hero="Железный человек">Выбрать</button>
+                </div>
             </div>
 
-            <!-- 3-ән -->
-            <div class="song-card">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=150&auto=format&fit=crop" alt="Ән суреті" class="song-img">
-                <div class="song-info">
-                    <h3>Қара торғай</h3>
-                    <p>Қайрат Нұртас</p>
+            <!-- 3. Бэтмен -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1531256485787-e576dd0b3d5e?q=80&w=1000&auto=format&fit=crop" alt="Бэтмен">
                 </div>
-                <button class="play-btn" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">▶</button>
+                <div class="content">
+                    <h2>Бэтмен</h2>
+                    <p class="subtitle">Брюс Уэйн • DC</p>
+                    <p class="description">Темный рыцарь Готэма, полагающийся на свой интеллект и боевые искусства.</p>
+                    <button class="hero-btn" data-hero="Бэтмен">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- 4. Капитан Америка -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1000&auto=format&fit=crop" alt="Капитан Америка">
+                </div>
+                <div class="content">
+                    <h2>Капитан Америка</h2>
+                    <p class="subtitle">Стив Роджерс • Marvel</p>
+                    <p class="description">Первый мститель, обладающий несгибаемой волей и легендарным щитом.</p>
+                    <button class="hero-btn" data-hero="Капитан Америка">Выбрать</button>
+                </div>
             </div>
         </div>
-    </main>
-
-    <!-- Жасырын аудио плеер -->
-    <audio id="audio-player"></audio>
-
-    <!-- 4. Төменгі бөлім -->
-    <footer id="about">
-        <p>&copy; 2026 QazaqTunes. Барлық құқықтар қорғалған.</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
