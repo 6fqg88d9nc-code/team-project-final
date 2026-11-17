@@ -3,24 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой любимый герой - Человек-паук</title>
+    <title>Галерея супергероев</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hero-card">
-        <!-- Интернеттен алынған сапалы сурет -->
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1000&auto=format&fit=crop" alt="Человек-паук">
-        </div>
-        
-        <div class="content">
-            <h1>Человек-паук</h1>
-            <p class="subtitle">Питер Паркер • Marvel Comics</p>
-            <p class="description">
-                Мой любимый герой комиксов. Обладает невероятной ловкостью, паучьим чутьем и способностью карабкаться по стенам. Его главный девиз: «С великой силой приходит великая ответственность».
-            </p>
-            <button id="btn">Нажми меня</button>
+    <div class="container">
+        <header>
+            <h1>Вселенная супергероев</h1>
+            <p>Выберите своего любимого персонажа</p>
+        </header>
+
+        <div class="heroes-grid">
+            <!-- 1. Человек-паук -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1000&auto=format&fit=crop" alt="Человек-паук">
+                </div>
+                <div class="content">
+                    <h2>Человек-паук</h2>
+                    <p class="subtitle">Питер Паркер • Marvel</p>
+                    <p class="description">Обладает невероятной ловкостью, паучьем чутьем и защищает Нью-Йорк.</p>
+                    <button class="hero-btn" data-hero="Человек-паук">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- 2. Железный человек -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1000&auto=format&fit=crop" alt="Железный человек">
+                </div>
+                <div class="content">
+                    <h2>Железный человек</h2>
+                    <p class="subtitle">Тони Старк • Marvel</p>
+                    <p class="description">Гениальный миллиардер в высокотехнологичном костюме брони.</p>
+                    <button class="hero-btn" data-hero="Железный человек">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- 3. Бэтмен -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1531256485787-e576dd0b3d5e?q=80&w=1000&auto=format&fit=crop" alt="Бэтмен">
+                </div>
+                <div class="content">
+                    <h2>Бэтмен</h2>
+                    <p class="subtitle">Брюс Уэйн • DC</p>
+                    <p class="description">Темный рыцарь Готэма, полагающийся на свой интеллект и боевые искусства.</p>
+                    <button class="hero-btn" data-hero="Бэтмен">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- 4. Капитан Америка -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1000&auto=format&fit=crop" alt="Капитан Америка">
+                </div>
+                <div class="content">
+                    <h2>Капитан Америка</h2>
+                    <p class="subtitle">Стив Роджерс • Marvel</p>
+                    <p class="description">Первый мститель, обладающий несгибаемой волей и легендарным щитом.</p>
+                    <button class="hero-btn" data-hero="Капитан Америка">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- 5. Тор -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=1000&auto=format&fit=crop" alt="Тор">
+                </div>
+                <div class="content">
+                    <h2>Тор</h2>
+                    <p class="subtitle">Бог грома • Marvel</p>
+                    <p class="description">Могущественный асгардец, управляющий молниями и владеющий молотом Мьёльнир.</p>
+                    <button class="hero-btn" data-hero="Тор">Выбрать</button>
+                </div>
+            </div>
+
+            <!-- 6. Черная Вдова -->
+            <div class="hero-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" alt="Черная Вдова">
+                </div>
+                <div class="content">
+                    <h2>Черная Вдова</h2>
+                    <p class="subtitle">Наташа Романофф • Marvel</p>
+                    <p class="description">Элитный шпион, мастер боевых искусств и ключевой участник команды Мстителей.</p>
+                    <button class="hero-btn" data-hero="Черная Вдова">Выбрать</button>
+                </div>
+            </div>
         </div>
     </div>
 
