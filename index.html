@@ -1,100 +1,183 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галерея супергероев</title>
+    <title>🦸 Супергеройлар Ғаламы</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Жарық эффекттері -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
     <div class="container">
         <header>
-            <h1>Вселенная супергероев</h1>
-            <p>Выберите своего любимого персонажа</p>
+            <h1>🦸 СУПЕРГЕРОЙЛАР ҒАЛАМЫ</h1>
+            <p>Сүйікті кейіпкеріңізді таңдаңыз</p>
         </header>
 
-        <div class="heroes-grid">
+        <!-- Іздеу -->
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Кейіпкер атын іздеу...">
+        </div>
+
+        <!-- Фильтр батырмалары -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Барлығы</button>
+            <button class="filter-btn" data-filter="Marvel">Marvel</button>
+            <button class="filter-btn" data-filter="DC">DC</button>
+        </div>
+
+        <!-- Карточкалар -->
+        <div class="heroes-grid" id="heroesGrid">
+
             <!-- 1. Человек-паук -->
-            <div class="hero-card">
+            <div class="hero-card" data-universe="Marvel">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1000&auto=format&fit=crop" alt="Человек-паук">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCMUCuzT3hGnh6jxkEsWyqltjVkd4YPoh2LKYp3QrG6A&s=10" alt="Человек-паук">
+                    <div class="universe-badge marvel">Marvel</div>
                 </div>
                 <div class="content">
                     <h2>Человек-паук</h2>
-                    <p class="subtitle">Питер Паркер • Marvel</p>
-                    <p class="description">Обладает невероятной ловкостью, паучьем чутьем и защищает Нью-Йорк.</p>
-                    <button class="hero-btn" data-hero="Человек-паук">Выбрать</button>
+                    <p class="subtitle">Питер Паркер</p>
+                    <p class="description">Керемет ептілік, өрмекші түйсігі және Нью-Йоркті қорғайды.</p>
+                    <button class="hero-btn" data-hero="Человек-паук">Таңдау</button>
                 </div>
             </div>
 
             <!-- 2. Железный человек -->
-            <div class="hero-card">
+            <div class="hero-card" data-universe="Marvel">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1000&auto=format&fit=crop" alt="Железный человек">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFgpaV9VzRE5FU2q5gv5eZS7AdWNSH2yKSQ98hN8egeA&s" alt="Железный человек">
+                    <div class="universe-badge marvel">Marvel</div>
                 </div>
                 <div class="content">
                     <h2>Железный человек</h2>
-                    <p class="subtitle">Тони Старк • Marvel</p>
-                    <p class="description">Гениальный миллиардер в высокотехнологичном костюме брони.</p>
-                    <button class="hero-btn" data-hero="Железный человек">Выбрать</button>
+                    <p class="subtitle">Тони Старк</p>
+                    <p class="description">Жоғары технологиялық сауыттағы гениалды миллиардер.</p>
+                    <button class="hero-btn" data-hero="Железный человек">Таңдау</button>
                 </div>
             </div>
 
             <!-- 3. Бэтмен -->
-            <div class="hero-card">
+            <div class="hero-card" data-universe="DC">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1531256485787-e576dd0b3d5e?q=80&w=1000&auto=format&fit=crop" alt="Бэтмен">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbZjkbRdOa5D7sRUWX0Pw1C1bCzMsgWYemOJZJMKqpJw&s=10" alt="Бэтмен">
+                    <div class="universe-badge dc">DC</div>
                 </div>
                 <div class="content">
                     <h2>Бэтмен</h2>
-                    <p class="subtitle">Брюс Уэйн • DC</p>
-                    <p class="description">Темный рыцарь Готэма, полагающийся на свой интеллект и боевые искусства.</p>
-                    <button class="hero-btn" data-hero="Бэтмен">Выбрать</button>
+                    <p class="subtitle">Брюс Уэйн</p>
+                    <p class="description">Готэмнің қараңғы рыцары, интеллекті мен ұрыс өнеріне сүйенеді.</p>
+                    <button class="hero-btn" data-hero="Бэтмен">Таңдау</button>
                 </div>
             </div>
 
             <!-- 4. Капитан Америка -->
-            <div class="hero-card">
+            <div class="hero-card" data-universe="Marvel">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1000&auto=format&fit=crop" alt="Капитан Америка">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr3W1SkrNyaalAHPQ62VZv0PRL3WV-PNE7q81EnVBlQg&s=10" alt="Капитан Америка">
+                    <div class="universe-badge marvel">Marvel</div>
                 </div>
                 <div class="content">
                     <h2>Капитан Америка</h2>
-                    <p class="subtitle">Стив Роджерс • Marvel</p>
-                    <p class="description">Первый мститель, обладающий несгибаемой волей и легендарным щитом.</p>
-                    <button class="hero-btn" data-hero="Капитан Америка">Выбрать</button>
+                    <p class="subtitle">Стив Роджерс</p>
+                    <p class="description">Бірінші кек алушы, мызғымас ерік-жігер мен аты аңызға айналған қалқан.</p>
+                    <button class="hero-btn" data-hero="Капитан Америка">Таңдау</button>
                 </div>
             </div>
 
-
-
-            <!-- 5. Тор -->
-            <div class="hero-card">
+            <!-- 5. Чудо-женщина -->
+            <div class="hero-card" data-universe="DC">
                 <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=1000&auto=format&fit=crop" alt="Тор">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IhBDK5eLQX5iusCjcRjVeGxJeJ1-c-P6bftaKU6F1g&s=10" alt="Чудо-женщина">
+                    <div class="universe-badge dc">DC</div>
+                </div>
+                <div class="content">
+                    <h2>Чудо-женщина</h2>
+                    <p class="subtitle">Диана Принс</p>
+                    <p class="description">Темискира ханшайымы, әділеттілік үшін күреседі.</p>
+                    <button class="hero-btn" data-hero="Чудо-женщина">Таңдау</button>
+                </div>
+            </div>
+
+            <!-- 6. Тор -->
+            <div class="hero-card" data-universe="Marvel">
+                <div class="img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoYTlIuJOQI3fP4Ci7wkwWt8UqI27Px2I3xkAbDeDBVg7fynslh7ns44A&s=10" alt="Тор">
+                    <div class="universe-badge marvel">Marvel</div>
                 </div>
                 <div class="content">
                     <h2>Тор</h2>
-                    <p class="subtitle">Бог грома • Marvel</p>
-                    <p class="description">Могущественный асгардец, управляющий молниями и владеющий молотом Мьёльнир.</p>
-                    <button class="hero-btn" data-hero="Тор">Выбрать</button>
+                    <p class="subtitle">Асгард құдайы</p>
+                    <p class="description">Найзағай құдайы, аты аңызға айналған Мьёльнир балғасының иесі.</p>
+                    <button class="hero-btn" data-hero="Тор">Таңдау</button>
                 </div>
             </div>
 
-            <!-- 6. Черная Вдова -->
-            <div class="hero-card">
+            <!-- 7. Супермен -->
+            <div class="hero-card" data-universe="DC">
+                <div class="img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyk44zhqkhapiKJlGTGrj3qzbqGlxBFQNprj4AjusDWw&s=10" alt="Супермен">
+                    <div class="universe-badge dc">DC</div>
+                </div>
+                <div class="content">
+                    <h2>Супермен</h2>
+                    <p class="subtitle">Кларк Кент</p>
+                    <p class="description">Криптоннан келген соңғы ұл, Жердің ең күшті қорғаушысы.</p>
+                    <button class="hero-btn" data-hero="Супермен">Таңдау</button>
+                </div>
+            </div>
+
+            <!-- 8. Халк -->
+            <div class="hero-card" data-universe="Marvel">
+                <div class="img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8CsgqaESe7zkCUQEIvP02NQBkrs5g8_3Uy3UsGXFcyA&s=10" alt="Халк">
+                    <div class="universe-badge marvel">Marvel</div>
+                </div>
+                <div class="content">
+                    <h2>Халк</h2>
+                    <p class="subtitle">Брюс Бэннер</p>
+                    <p class="description">Ашуланған кезде құбыжыққа айналатын гениалды ғалым.</p>
+                    <button class="hero-btn" data-hero="Халк">Таңдау</button>
+                </div>
+            </div>
+
+            <!-- 9. Черная Вдова -->
+            <div class="hero-card" data-universe="Marvel">
                 <div class="img-container">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" alt="Черная Вдова">
+                    <div class="universe-badge marvel">Marvel</div>
                 </div>
                 <div class="content">
                     <h2>Черная Вдова</h2>
-                    <p class="subtitle">Наташа Романофф • Marvel</p>
-                    <p class="description">Элитный шпион, мастер боевых искусств и ключевой участник команды Мстителей.</p>
-                    <button class="hero-btn" data-hero="Черная Вдова">Выбрать</button>
+                    <p class="subtitle">Наташа Романофф</p>
+                    <p class="description">Элиталық тыңшы, ұрыс өнерінің шебері және Кек алушылар командасының маңызды мүшесі.</p>
+                    <button class="hero-btn" data-hero="Черная Вдова">Таңдау</button>
                 </div>
             </div>
 
+        </div>
+
+        <!-- Ештеңе табылмады -->
+        <div class="no-results" id="noResults">
+            <span>😢</span>
+            <p>Ештеңе табылмады...</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-icon">🦸</div>
+            <h3 class="modal-title" id="modalTitle">Кейіпкер</h3>
+            <p class="modal-text" id="modalText">Сіз кейіпкерді таңдадыңыз!</p>
+            <button class="modal-btn" id="modalOk">Керемет! 🚀</button>
         </div>
     </div>
 
