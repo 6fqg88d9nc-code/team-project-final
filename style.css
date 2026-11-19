@@ -1,64 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-attachment: fixed;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
     padding: 40px 20px;
     min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ===== Жарық эффектілері ===== */
+.glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+    animation: float 12s ease-in-out infinite;
+}
+
+.glow-1 {
+    width: 400px; height: 400px;
+    background: #ff416c;
+    top: -100px; left: -100px;
+}
+
+.glow-2 {
+    width: 350px; height: 350px;
+    background: #a29bfe;
+    bottom: -80px; right: -80px;
+    animation-delay: 3s;
+}
+
+.glow-3 {
+    width: 300px; height: 300px;
+    background: #f1c40f;
+    top: 40%; left: 50%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(30px, -30px) scale(1.15); }
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
+/* ===== Тақырып ===== */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 header h1 {
-    font-size: 36px;
+    font-size: 40px;
     color: #f1c40f;
     margin-bottom: 10px;
-    text-shadow: 0 2px 10px rgba(241, 196, 15, 0.3);
+    text-shadow: 0 0 25px rgba(241, 196, 15, 0.6),
+                 0 0 50px rgba(241, 196, 15, 0.3);
+    letter-spacing: 2px;
 }
 
 header p {
     color: #a29bfe;
     font-size: 16px;
+    font-weight: 300;
 }
 
-/* Карточкалар торы (Grid) */
+/* ===== Іздеу ===== */
+.search-box {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 25px;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 20px 14px 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(30, 30, 46, 0.7);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #f1c40f;
+    box-shadow: 0 0 25px rgba(241, 196, 15, 0.3);
+}
+
+.search-box input::placeholder {
+    color: #a29bfe;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* ===== Фильтр батырмалары ===== */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    animation: fadeInUp 0.8s ease 0.3s backwards;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(30, 30, 46, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #dfe6e9;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.filter-btn:hover {
+    border-color: #f1c40f;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    color: #0f0c29;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(241, 196, 15, 0.4);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Карточкалар грид ===== */
 .heroes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
-    justify-content: center;
 }
 
 .hero-card {
     background: rgba(30, 30, 46, 0.85);
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+    animation: cardIn 0.5s ease backwards;
+    cursor: pointer;
+}
+
+.hero-card:nth-child(1) { animation-delay: 0.05s; }
+.hero-card:nth-child(2) { animation-delay: 0.10s; }
+.hero-card:nth-child(3) { animation-delay: 0.15s; }
+.hero-card:nth-child(4) { animation-delay: 0.20s; }
+.hero-card:nth-child(5) { animation-delay: 0.25s; }
+.hero-card:nth-child(6) { animation-delay: 0.30s; }
+.hero-card:nth-child(7) { animation-delay: 0.35s; }
+.hero-card:nth-child(8) { animation-delay: 0.40s; }
+.hero-card:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .hero-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(241, 196, 15, 0.2);
+    transform: translateY(-10px);
+    border-color: rgba(241, 196, 15, 0.5);
+    box-shadow: 0 20px 45px rgba(241, 196, 15, 0.25),
+                0 0 30px rgba(255, 65, 108, 0.15);
 }
 
-/* Суреттің биіктігі кішірейтіліп, әдемі сыйатындай етіліп қойылды */
+/* ===== Сурет ===== */
 .img-container {
     width: 100%;
-    height: 160px; 
+    height: 220px;
     overflow: hidden;
+    position: relative;
+}
+
+.img-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30, 30, 46, 0.9), transparent 60%);
+    pointer-events: none;
 }
 
 .img-container img {
@@ -66,13 +229,39 @@ header p {
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .hero-card:hover .img-container img {
-    transform: scale(1.05);
+    transform: scale(1.12);
 }
 
+/* ===== Universe белгісі ===== */
+.universe-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.universe-badge.marvel {
+    background: rgba(237, 28, 36, 0.85);
+    box-shadow: 0 0 15px rgba(237, 28, 36, 0.6);
+}
+
+.universe-badge.dc {
+    background: rgba(0, 71, 187, 0.85);
+    box-shadow: 0 0 15px rgba(0, 71, 187, 0.6);
+}
+
+/* ===== Мазмұн ===== */
 .content {
     padding: 20px;
     display: flex;
@@ -82,40 +271,199 @@ header p {
 
 h2 {
     color: #ff4d4d;
-    margin: 0 0 4px 0;
-    font-size: 20px;
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
 }
 
 .subtitle {
     color: #a29bfe;
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 12px;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .description {
     font-size: 13px;
-    line-height: 1.4;
+    line-height: 1.6;
     color: #dfe6e9;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     flex-grow: 1;
 }
 
+/* ===== Батырма ===== */
 .hero-btn {
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
     color: white;
     border: none;
-    padding: 10px 16px;
+    padding: 12px 20px;
     font-size: 14px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(255, 65, 108, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
     transition: all 0.3s ease;
     width: 100%;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-btn:hover::before {
+    left: 100%;
 }
 
 .hero-btn:hover {
-    opacity: 0.9;
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 65, 108, 0.6);
+}
+
+.hero-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== Ештеңе табылмады ===== */
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: #a29bfe;
+}
+
+.no-results span {
+    font-size: 60px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.no-results p {
+    font-size: 18px;
+}
+
+.no-results.show {
+    display: block;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal {
+    background: linear-gradient(135deg, #1e1e2e, #2a2a40);
+    border: 1px solid rgba(241, 196, 15, 0.4);
+    border-radius: 25px;
+    padding: 40px 35px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(241, 196, 15, 0.2);
+    animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 65, 108, 0.8);
+    transform: rotate(90deg);
+}
+
+.modal-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+    animation: bounce 1.2s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+.modal-title {
+    color: #f1c40f;
+    font-size: 26px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+}
+
+.modal-text {
+    color: #dfe6e9;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.modal-btn {
+    background: linear-gradient(45deg, #f1c40f, #f39c12);
+    color: #0f0c29;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(241, 196, 15, 0.4);
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(241, 196, 15, 0.6);
+}
+
+/* ===== Мобильді бейімделу ===== */
+@media (max-width: 600px) {
+    header h1 { font-size: 26px; }
+    body { padding: 25px 15px; }
+    .heroes-grid {
+        grid-template-columns: 1fr;
+    }
 }
