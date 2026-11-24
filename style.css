@@ -467,29 +467,3 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
-.team-work {
-    margin-top: 48px;
-    padding: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 16px;
-    background: rgba(30, 30, 46, 0.85);
-    line-height: 1.6;
-}
-
-.team-work h2,
-.team-work h3 {
-    color: #f1c40f;
-}
-
-.team-work nav ul,
-.team-work article ul {
-    padding-left: 24px;
-}
-
-.team-work a {
-    color: #a29bfe;
-}
-
-.team-work article {
-    margin-top: 24px;
-}
