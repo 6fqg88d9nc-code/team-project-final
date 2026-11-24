@@ -467,3 +467,27 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
+
+.hero-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 24px 0;
+}
+
+.hero-navigation a {
+    color: #f1c40f;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid rgba(241, 196, 15, 0.35);
+    border-radius: 18px;
+}
+
+.hero-navigation a:hover,
+.hero-navigation a:focus-visible {
+    background: rgba(241, 196, 15, 0.16);
+    outline: 2px solid #f1c40f;
+    outline-offset: 2px;
+}
